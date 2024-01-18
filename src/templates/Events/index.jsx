@@ -1,6 +1,8 @@
 
-export default () => {
+const Events = () => {
   return (
-    <h1>events</h1>
+    <h1>Events</h1>
   );
-}
+};
+
+export default Events;

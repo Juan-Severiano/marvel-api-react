@@ -1,6 +1,8 @@
 
-export default () => {
+const Comics = () => {
   return (
-    <h1>comics</h1>
+    <h1>Comics</h1>
   );
-}
+};
+
+export default Comics;
