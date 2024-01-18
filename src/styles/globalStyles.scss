@@ -1,1 +1,13 @@
 @import './abstract/variables';
+
+body {
+  background-color: #101010;
+}
+
+.font-default {
+  font-family: $font-default;
+
+  .logo {
+    font-size: 50px;
+  }
+}
