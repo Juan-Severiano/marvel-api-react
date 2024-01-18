@@ -1,7 +1,11 @@
+import Nav from '../../components/Nav';
 
 const Comics = () => {
   return (
-    <h1>Comics</h1>
+    <>
+      <Nav textColor='#fff' />
+      <h1>Comics</h1>
+    </>
   );
 };
 

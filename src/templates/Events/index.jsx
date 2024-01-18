@@ -1,7 +1,11 @@
+import Nav from "../../components/Nav";
 
 const Events = () => {
   return (
-    <h1>Events</h1>
+    <>
+      <Nav textColor='#fff' />
+      <h1>Events</h1>
+    </>
   );
 };
 

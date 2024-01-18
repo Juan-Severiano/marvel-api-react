@@ -1,7 +1,11 @@
+import Nav from "../../components/Nav";
 
 const Series = () => {
   return (
-    <h1>Series</h1>
+    <>
+      <Nav textColor='#fff' />
+      <h1>Series</h1>
+    </>
   );
 };
 

@@ -1,7 +1,11 @@
+import Nav from "../../components/Nav";
 
 const Stories = () => {
   return (
-    <h1>stories</h1>
+    <>
+      <Nav textColor='#fff' />
+      <h1>stories</h1>
+    </>
   );
 };
 
