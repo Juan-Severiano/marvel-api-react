@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { useState } from "react";
-import api from "../../services/api";
+import { getCharacters } from "../../services/requests/characters";
 import './styles.scss';
 import { Grid } from "@mui/material";
 import SimpleCardCharacters from "../../components/SimpleCardCharacters";
@@ -11,7 +11,7 @@ const Home = () => {
 
   useEffect(() => {
     const fetch = async () => {
-      const response = await api.get('/characters');
+      const response = await getCharacters();
       console.log(response.data.data.results);
       setCharacters(response.data.data.results);
     }
