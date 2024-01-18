@@ -1,0 +1,22 @@
+@import '../../styles/abstract/variables';
+
+.card {
+  background-color: #181822!important;
+  color: #f0f0f0;
+  min-width: 200px;
+  min-height: 150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .img-card {
+    width: 200px;
+    height: 200px;
+    border-radius: 100%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+  .card-title {
+    font-family: $font-default;
+  }
+}

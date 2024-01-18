@@ -32,3 +32,10 @@
     font-family: $font-default;
   }
 }
+
+@media (max-width: 900px) {
+  #header {
+    background-position: center;
+  }
+}
+
