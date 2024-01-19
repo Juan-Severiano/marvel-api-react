@@ -1,11 +1,15 @@
+@import '../../styles/abstract/variables';
+
 .footer {
   height: 300px;
   background-color: #202020;
+  a {
+    color: #ec1d24 !important;
+  }
 }
 
 .top {
   padding: 20px;
-  background-color: #202020;
 }
 
 .info p {
@@ -22,19 +26,7 @@
   margin: 15px;
 }
 
-.social-media i,
-.tecnologies i {
-  padding: 10px;
-  color: #a5a5a5;
-}
 
-.social-media i:hover {
-  color: #f39800;
-}
-
-a {
-  color: #f39800 !important;
-}
 
 a:hover {
   color: #ec1d24 !important;
@@ -47,4 +39,5 @@ a:hover {
 
 .bottom {
   color: #fff !important;
+  font-family: $font-default;
 }

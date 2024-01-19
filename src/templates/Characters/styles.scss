@@ -1,0 +1,14 @@
+@import '../../styles/abstract/variables';
+
+.prev, .next {
+  font-family: $font-default;
+  color: #b0b0b0!important;
+}
+.form-control {
+  background-color: #000;
+  border: none;
+  height: 50px;
+  &:focus {
+    background-color: #101010;
+  }
+}

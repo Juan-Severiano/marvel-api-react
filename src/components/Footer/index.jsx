@@ -12,7 +12,7 @@ const Footer = () => {
 
       </div>
       <div className="bottom d-flex justify-content-center align-items-center text-white bg-black">
-        &copy; Todos os direitos reservados à <a className=' font-default ' href="https://marvel.com/" rel="noopener">Marvel</a>
+        &copy; Todos os direitos reservados à <a className='ms-1 font-default ' href="https://marvel.com/" rel="noopener">Marvel</a>
       </div>
     </footer>
   )

@@ -12,8 +12,8 @@ const Home = () => {
   useEffect(() => {
     const fetch = async () => {
       const response = await getCharacters();
-      console.log(response.data.data.results);
-      setCharacters(response.data.data.results);
+      console.log(response.results);
+      setCharacters(response.results);
     }
     fetch()
   }, [])
