@@ -43,9 +43,10 @@ const Characters = () => {
           <span className="input-group-text"><i className="bi bi-search"></i></span>
         </div>
         <Grid container xs={12} spacing={3}>
-          {characters.map((character) => (
-            <SimpleCardCharacters key={character.id} character={character} />
-          ))}
+          {characters.map((character) => {
+            if (character.thumbnail.path === 'http://i.annihil.us/u/prod/marvel/i/mg/b/40/image_not_available') return null
+            return <SimpleCardCharacters key={character.id} character={character} />
+          })}
         </Grid>
       </main>
     </>
