@@ -5,14 +5,17 @@ import './styles.scss';
 import { Grid } from "@mui/material";
 import SimpleCardCharacters from "../../components/SimpleCardCharacters";
 import Header from '../../components/Header/index';
+import MediaLoadingUnion from "../../components/MediaLoadingUnion";
 
 const Home = () => {
   const [characters, setCharacters] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const fetch = async () => {
       const response = await getCharacters();
       console.log(response.results);
+      setLoading(false)
       setCharacters(response.results);
     }
     fetch()
@@ -25,11 +28,14 @@ const Home = () => {
         <h2 className="font-default text-white text-center fs-1 my-5">Conheça os personagens</h2>
         <Grid container xs={12} spacing={3}>
           {
-            characters.map(character => {
-              return (
-                <SimpleCardCharacters key={character.id} character={character} />
-              )
-            })
+            loading ?
+              <MediaLoadingUnion />
+              :
+              characters.map(character => {
+                return (
+                  <SimpleCardCharacters key={character.id} character={character} />
+                )
+              })
           }
         </Grid>
       </main>

@@ -3,10 +3,12 @@ import Nav from '../../components/Nav';
 import { useEffect, useState } from 'react';
 import SimpleCardSeries from '../../components/SimpleCardSeries';
 import { getSeries, getSeriesByTitleStart } from '../../services/requests/series';
+import MediaComicsUnion from '../../components/MediaComicsUnion';
 
 const Comics = () => {
   const [characters, setCharacters] = useState([]);
   const [search, setSearch] = useState('');
+  const [loading, setLoading] = useState(true);
 
 
   const handleSearchUpdate = (e) => {
@@ -18,6 +20,7 @@ const Comics = () => {
       const response = await getSeries();
       console.log(response.results);
       setCharacters(response.results);
+      setLoading(false);
     };
 
     fetchCharacters();
@@ -42,7 +45,11 @@ const Comics = () => {
           <span className="input-group-text"><i className="bi bi-search"></i></span>
         </div>
         <Grid container xs={12} spacing={3}>
-          {characters.map((serie) => {
+          {
+          loading ?
+          <MediaComicsUnion />
+          :
+          characters.map((serie) => {
             if (serie.thumbnail.path === 'http://i.annihil.us/u/prod/marvel/i/mg/b/40/image_not_available') return null
             return <SimpleCardSeries key={serie.id} series={serie} />
           })}

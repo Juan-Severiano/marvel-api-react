@@ -4,11 +4,12 @@ import { getCharacters, getCharactersByNameStart } from "../../services/requests
 import { Grid } from '@mui/material';
 import SimpleCardCharacters from "../../components/SimpleCardCharacters";
 import './styles.scss';
+import MediaLoadingUnion from "../../components/MediaLoadingUnion";
 
 const Characters = () => {
   const [characters, setCharacters] = useState([]);
   const [search, setSearch] = useState('');
-
+  const [loading, setLoading] = useState(true);
 
   const handleSearchUpdate = (e) => {
     setSearch(e.target.value);
@@ -19,6 +20,7 @@ const Characters = () => {
       const response = await getCharacters();
       console.log(response.results);
       setCharacters(response.results);
+      setLoading(false)
     };
 
     fetchCharacters();
@@ -43,7 +45,11 @@ const Characters = () => {
           <span className="input-group-text"><i className="bi bi-search"></i></span>
         </div>
         <Grid container xs={12} spacing={3}>
-          {characters.map((character) => {
+          {
+            loading ?
+              <MediaLoadingUnion />
+              :
+          characters.map((character) => {
             if (character.thumbnail.path === 'http://i.annihil.us/u/prod/marvel/i/mg/b/40/image_not_available') return null
             return <SimpleCardCharacters key={character.id} character={character} />
           })}
