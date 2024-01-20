@@ -6,6 +6,7 @@ import { Grid } from "@mui/material";
 import SimpleCardCharacters from "../../components/SimpleCardCharacters";
 import Header from '../../components/Header/index';
 import MediaLoadingUnion from "../../components/MediaLoadingUnion";
+import Footer from "../../components/Footer";
 
 const Home = () => {
   const [characters, setCharacters] = useState([]);
@@ -39,6 +40,8 @@ const Home = () => {
           }
         </Grid>
       </main>
+      <Footer />
+
     </>
   );
 };

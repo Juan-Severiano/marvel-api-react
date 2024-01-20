@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react';
 import SimpleCardSeries from '../../components/SimpleCardSeries';
 import { getSeries, getSeriesByTitleStart } from '../../services/requests/series';
 import MediaComicsUnion from '../../components/MediaComicsUnion';
+import Footer from '../../components/Footer/index';
 
 const Stories = () => {
   const [characters, setCharacters] = useState([]);
@@ -55,6 +56,7 @@ const Stories = () => {
               })}
         </Grid>
       </main>
+      <Footer />
     </>
   );
 };

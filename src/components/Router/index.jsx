@@ -1,6 +1,7 @@
 import { Route, Routes } from "react-router-dom"
 import Home from "../../templates/Home";
 import Characters from "../../templates/Characters";
+import Character from "../../templates/Character";
 import Comics from "../../templates/Comics";
 import Events from "../../templates/Events";
 import Stories from "../../templates/Stories";
@@ -11,7 +12,7 @@ const Router = () => {
     <Routes>
       <Route element={<Home />} path='/' />
       <Route element={<Characters />} path='/characters' />
-      <Route element={<Characters />} path='/characters/:id' />
+      <Route element={<Character />} path='/characters/:id' />
       <Route element={<Comics />} path='/comics' />
       <Route element={<Events />} path='/events' />
       <Route element={<Stories />} path='/stories' />
