@@ -1,8 +1,9 @@
 import { useParams } from 'react-router-dom';
 import './styles.scss';
-import { useEffect, useState, useRef } from 'react';
+import { useEffect, useState } from 'react';
 import { getCharactersById, getCharactersComics } from '../../services/requests/characters';
 import ComeBack from '../../components/ComeBack';
+import Carousel from '../../components/Carousel';
 
 function Character() {
   const { id } = useParams()
@@ -15,7 +16,6 @@ function Character() {
     }
   });
   const [comics, setComics] = useState([]);
-  const carousel = useRef(null)
 
   useEffect(() => {
     const fetchCharacter = async () => {
@@ -27,17 +27,6 @@ function Character() {
     }
     fetchCharacter()
   }, [id]);
-
-  const handleLeftClick = (e) => {
-    e.preventDefault()
-    console.log(carousel.current.offsetWidth)
-    carousel.current.scrollLeft -= carousel.current.offsetWidth
-  }
-  const handleRightClick = (e) => {
-    e.preventDefault()
-    console.log(carousel.current.offsetWidth)
-    carousel.current.scrollLeft += carousel.current.offsetWidth
-  }
 
   return (
     <>
@@ -62,7 +51,7 @@ function Character() {
         <article className="container px-auto">
           <section className="content container">
             <h3 className='font-default mt-5 text-primary text-white fs-1 text-center text-md-start'>Quadrinhos com {character.name}</h3>
-            <section className='carousel' ref={carousel}>
+            <Carousel>
               {
                 comics.map(comic => (
                   <figure className='comic-card item' key={comic.id}>
@@ -73,15 +62,7 @@ function Character() {
                   </figure>
                 ))
               }
-            </section>
-            <div className="fs-1 container justify-content-center d-flex text-black">
-              <button className='btn fs-1 text-black' onClick={handleLeftClick}>
-                <i className="bi bi-arrow-left-circle-fill me-3"></i>
-              </button>
-              <button className='btn fs-1 text-black' onClick={handleRightClick}>
-                <i className="bi bi-arrow-right-circle-fill ms-3"></i>
-              </button>
-            </div>
+            </Carousel>
           </section>
         </article>
       </main>
