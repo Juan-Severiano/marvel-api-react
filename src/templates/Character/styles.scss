@@ -14,18 +14,16 @@ main#character {
     left: auto;
     right: auto;
     display: flex;
-    height: 100%;
+    height: 100vh;
     justify-content: center;
     flex-direction: column;
 
-    .logo {
-      background-image: url("/marvel-logo-different.jpeg");
-      width: 100px;
-      height: 100px;
-      background-size: cover;
+    #img-inside {
+      border-radius: 100%;
+      width: 60%;
     }
 
-    .artist-name {
+    .character-name {
       font-size: 48px;
       font-family: $font-default;
       margin-bottom: 20px;
@@ -68,16 +66,76 @@ main#comics {
   }
 }
 
+main#series {
+  background-image: url(/marvelseries-panel.jpg);
+  width: 100%;
+  min-height: 100vh;
+  background-size: cover;
+
+  .content {
+    color: #fff;
+    position: absolute;
+    z-index: 2;
+    left: auto;
+    right: auto;
+    display: flex;
+    height: 100%;
+    justify-content: center;
+    flex-direction: column;
+
+  }
+}
+
+main#events {
+  background-image: url(/events-panel.webp)!important;
+  width: 100%;
+  min-height: 100vh;
+  background-size: cover;
+
+  .content {
+    color: #fff;
+    position: absolute;
+    z-index: 2;
+    left: auto;
+    right: auto;
+    display: flex;
+    height: 100%;
+    justify-content: center;
+    flex-direction: column;
+
+  }
+}
+
+main#stories {
+  background-image: url(/marvel-stories.jpg)!important;
+  width: 100%;
+  min-height: 100vh;
+  background-size: cover;
+
+  .content {
+    color: #fff;
+    position: absolute;
+    z-index: 2;
+    left: auto;
+    right: auto;
+    display: flex;
+    height: 100%;
+    justify-content: center;
+    flex-direction: column;
+
+  }
+}
+
 .carousel {
   display: flex;
   overflow-x: auto;
   scroll-behavior: smooth;
 
-  .item.comic-card {
+  .item {
     padding: 10px;
     width: 250px;
     flex: none;
-    margin-right: 10px; 
+    margin-right: 10px;
   }
   &::-webkit-scrollbar {
     display: none;
@@ -87,4 +145,18 @@ main#comics {
 .comic-card {
   background-color: #101010 !important;
   border-radius: 15px;
+}
+
+.logo {
+  width: 50%;
+}
+
+
+@media (max-width: 768px) {
+  .logo {
+    width: 32%!important;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+  }
 }
