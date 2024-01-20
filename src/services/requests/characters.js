@@ -30,6 +30,21 @@ export async function getCharactersById(id) {
   }
 }
 
+export async function getCharactersComics(id) {
+  try {
+    const response = await api.get(`/characters/${id}/comics`,);
+    return {
+      response: response,
+      results: response.data.data.results,
+    };
+  } catch (error) {
+    console.error('Erro ao obter personagens:', error);
+    return {
+      error: 'Erro ao obter personagens',
+    };
+  }
+}
+
 export async function getCharactersByNameStart(query) {
   const response = await api.get('/characters', {
     params: {

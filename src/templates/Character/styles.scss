@@ -1,8 +1,11 @@
-main#artist {
+@import '../../styles/abstract/variables';
+
+main#character {
   background-image: url(/marvelcomics-panel.jpg);
   width: 100%;
   min-height: 100vh;
   background-size: cover;
+
   .content {
     color: #fff;
     position: absolute;
@@ -24,25 +27,13 @@ main#artist {
 
     .artist-name {
       font-size: 48px;
-      font-family: "Secular One";
+      font-family: $font-default;
       margin-bottom: 20px;
     }
 
     .description {
       font-family: 'Rubik';
       line-height: 24px;
-    }
-
-    .description#dezembro,
-    .description#tvgirl {
-      line-height: 20px;
-
-    }
-
-    .audio-player {
-      background-color: #0b111a;
-      border-radius: 40px;
-      padding: 20px;
     }
   }
 
@@ -55,4 +46,45 @@ main#artist {
     min-width: 100vw;
     background: linear-gradient(-233deg, #000 40%, rgba(0, 0, 0, 0) 65%) no-repeat;
   }
+}
+
+main#comics {
+  background-image: url(/comics-wallpaper.jpg);
+  width: 100%;
+  min-height: 100vh;
+  background-size: cover;
+
+  .content {
+    color: #fff;
+    position: absolute;
+    z-index: 2;
+    left: auto;
+    right: auto;
+    display: flex;
+    height: 100%;
+    justify-content: center;
+    flex-direction: column;
+
+  }
+}
+
+.carousel {
+  display: flex;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+
+  .item.comic-card {
+    padding: 10px;
+    width: 250px;
+    flex: none;
+    margin-right: 10px; 
+  }
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+.comic-card {
+  background-color: #101010 !important;
+  border-radius: 15px;
 }
