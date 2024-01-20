@@ -7,6 +7,7 @@ import SimpleCardCharacters from "../../components/SimpleCardCharacters";
 import Header from '../../components/Header/index';
 import MediaLoadingUnion from "../../components/MediaLoadingUnion";
 import Footer from "../../components/Footer";
+import { Link } from "react-router-dom";
 
 const Home = () => {
   const [characters, setCharacters] = useState([]);
@@ -32,12 +33,16 @@ const Home = () => {
             loading ?
               <MediaLoadingUnion />
               :
-              characters.map(character => {
+              characters.map((character) => {
+                if (character.thumbnail.path === 'http://i.annihil.us/u/prod/marvel/i/mg/b/40/image_not_available') return null
                 return (
-                  <SimpleCardCharacters key={character.id} character={character} />
+                  <Grid key={character.id} item xs={12} lg={3} md={4} sm={6}>
+                    <Link to={`/characters/${character.id}`} className="text-decoration-none">
+                      <SimpleCardCharacters key={character.id} character={character} />
+                    </Link>
+                  </Grid>
                 )
-              })
-          }
+              })}
         </Grid>
       </main>
       <Footer />
