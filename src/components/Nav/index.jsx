@@ -16,7 +16,6 @@ const Nav = ({ textColor }) => {
             <li className="nav-item"><Link className="nav-link text-reset" to="/characters">Characters</Link></li>
             <li className="nav-item"><Link className="nav-link text-reset" to="/comics">Comics</Link></li>
             <li className="nav-item"><Link className="nav-link text-reset" to="/series">Series</Link></li>
-            <li className="nav-item"><Link className="nav-link text-reset" to="/stories">Stories</Link></li>
             <li className="nav-item"><Link className="nav-link text-reset" to="/events">Events</Link></li>
           </ul>
         </div>

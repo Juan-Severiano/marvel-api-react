@@ -1,7 +1,7 @@
 import { useParams } from 'react-router-dom';
 import './styles.scss';
 import { useEffect, useState } from 'react';
-import { getCharactersById, getCharactersComics, getCharactersEvents, getCharactersSeries, getCharactersStories } from '../../services/requests/characters';
+import { getCharactersById, getCharactersComics, getCharactersEvents, getCharactersSeries } from '../../services/requests/characters';
 import ComeBack from '../../components/ComeBack';
 import Carousel from '../../components/Carousel';
 
@@ -20,7 +20,6 @@ function Character() {
   const [character, setCharacter] = useState(objCharacter);
   const [comics, setComics] = useState([objCharacter]);
   const [series, setSeries] = useState([objCharacter]);
-  const [stories, setStories] = useState([objCharacter]);
   const [events, setEvents] = useState([objCharacter]);
 
   useEffect(() => {
@@ -29,13 +28,10 @@ function Character() {
       const comicsResponse = await getCharactersComics(id);
       const seriesResponse = await getCharactersSeries(id);
       const eventsResponse = await getCharactersEvents(id);
-      const storiesResponse = await getCharactersStories(id);
-      console.log(storiesResponse);
       setCharacter(response.results[0]);
       setComics(comicsResponse.results);
       setSeries(seriesResponse.results);
       setEvents(eventsResponse.results);
-      setStories(storiesResponse.results);
     }
     fetchCharacter()
   }, [id]);
@@ -112,26 +108,6 @@ function Character() {
                     </div>
                   </figure>
                 ))
-              }
-            </Carousel>
-          </section>
-        </article>
-      </main>
-      <main className='px-auto' id='stories'>
-        <article className="container px-auto">
-          <section className="content container">
-            <h3 className='font-default mt-5 text-primary text-white fs-1 text-center text-md-start'>Stories with {character.name}</h3>
-            <Carousel>
-              {
-                stories.length > 0 ?
-                  stories.map(story => (
-                    <figure className='stories-card item' key={story.id}>
-                      <div className="comic-card-body mt-3">
-                        <h4 className='font-default text-center fs-3'>{story.title}</h4>
-                        <p>{story.description}</p>
-                      </div>
-                    </figure>
-                  )) : 'No story related to the character was found'
               }
             </Carousel>
           </section>
