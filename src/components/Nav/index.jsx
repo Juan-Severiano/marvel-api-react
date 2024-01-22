@@ -15,8 +15,8 @@ const Nav = ({ textColor }) => {
           <ul className="navbar-nav ms-auto mb-2 mb-lg-0 fs-5">
             <li className="nav-item"><Link className="nav-link text-reset" to="/characters">Characters</Link></li>
             <li className="nav-item"><Link className="nav-link text-reset" to="/comics">Comics</Link></li>
-            <li className="nav-item"><Link className="nav-link text-reset" to="/series">Series</Link></li>
             <li className="nav-item"><Link className="nav-link text-reset" to="/events">Events</Link></li>
+            <li className="nav-item"><Link className="nav-link text-reset" to="/series">Series</Link></li>
           </ul>
         </div>
       </div>

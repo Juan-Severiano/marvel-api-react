@@ -15,3 +15,9 @@ body {
 .text-primary {
   color: $primary-color!important;
 }
+
+.hover-primary {
+  &:hover {
+    color: $primary-color;
+  }
+}
